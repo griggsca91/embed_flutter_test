@@ -24,12 +24,9 @@ jobs:
       - run: flutter pub get
       - name: build
         run: flutter build web
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-pages-artifact@v2
         with:
-          name: github-pages
           path: build/web/
-          if-no-files-found: error 
-
 
   deploy:
     # Add a dependency to the build job
