@@ -24,6 +24,12 @@ jobs:
       - run: flutter pub get
       - name: build
         run: flutter build web
+      - uses: actions/upload-artifact@v3
+        with:
+          name: flutter-web-build
+          path: build/web/
+          if-no-files-found: error 
+
 
   deploy:
     # Add a dependency to the build job
