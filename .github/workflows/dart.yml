@@ -23,7 +23,7 @@ jobs:
           channel: 'stable'
       - run: flutter pub get
       - name: build
-        run: flutter build web
+        run: flutter build web --base-href /embed_flutter_test/
       - uses: actions/upload-pages-artifact@v2
         with:
           path: build/web/
